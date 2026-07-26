@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theme Toggle Button</title>
+  
+  <style>
+    .dark {
+      background-color: black;
+      color: white;
+    }
+    
+    .light {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+
+<body class="light">
+  <h3>Welcome to my website</h3>
+  <button id="btn">Change Mode</button>
+  
+  <script>
+    let mode = document.querySelector("#btn");
+    let body = document.body;
+    let current = "light";
+    
+    mode.addEventListener("click", () => {
+      
+      if (current === "light") {
+        current = "dark";
+        body.classList.remove("light");
+        body.classList.add("dark");
+      } else {
+        current = "light";
+        body.classList.remove("dark");
+        body.classList.add("light");
+      }
+      
+      console.log(current);
+      
+    });
+  </script>
+  
+</body>
+
+</html>
